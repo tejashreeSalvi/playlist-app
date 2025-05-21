@@ -14,4 +14,4 @@ A simple and intuitive application to create, manage playlists and share insight
    git clone https://github.com/tejashreeSalvi/playlist-app.git
 
 
-![Application Screenshot](src/resources/swagger.png "Swagger for Playlist App")
+![Application Screenshot](playlist-backend/src/resources/swagger.png "Swagger for Playlist App")
