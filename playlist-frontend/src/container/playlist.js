@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { Tabs, Tab, Box, Typography } from '@mui/material';
 import { get_playlist } from "../api/playlistapi";
 import CustomTable from "../component/CustomTable";
+import ChartsComponent from "../component/ChartsComponent";
 
 const PlaylistTable = () => {
   const [tableData, setSongs] = useState([]);
   const [error, setError] = useState(null);
+  const [selectedTab, setSelectedTab] = useState(0);
 
   useEffect(() => {
     const getSongs = async () => {
@@ -23,11 +26,21 @@ const PlaylistTable = () => {
     getSongs();
   }, []);
 
+
+  const handleTabChange = (event, newValue) => {
+    setSelectedTab(newValue);
+  };
+
   return (
-    <div>
-      <h1>Song PlayList</h1>
-      <CustomTable data={tableData} />
-    </div>
+    <Box sx={{ padding: 2 }}>
+      <Tabs value={selectedTab} onChange={handleTabChange}>
+        <Tab label="Table View" />
+        <Tab label="Chart View" />
+      </Tabs>
+
+      {selectedTab === 0 && <CustomTable data={tableData} />}
+      {selectedTab === 1 && <ChartsComponent songs={tableData} />}
+    </Box>
   );
 };
 
