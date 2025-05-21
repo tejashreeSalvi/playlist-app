@@ -8,7 +8,7 @@ api = Namespace('playlist', description='Playlist normalization operations')
 
 # Define the model for the request body
 
-@api.route('normalize')
+@api.route('/normalize')
 class Normalize(Resource):
     @api.doc(
         description="Normalize playlist data and optionally paginate results.",
@@ -29,7 +29,7 @@ class Normalize(Resource):
             return Songs().normalize_data(playlist_data)
         
 # api for get entire playlist 
-@api.route('songs')
+@api.route('/songs')
 class SongsResource(Resource):
     @api.doc(
         description="Get all songs from the database.",
@@ -46,7 +46,7 @@ class SongsResource(Resource):
     
     
 # api for get song by title
-@api.route('songs/<string:title>')
+@api.route('/songs/<string:title>')
 class SongResource(Resource):
     @api.doc(
         description="Get a song by its title.",

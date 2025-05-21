@@ -1,0 +1,1 @@
+export const PLAYLIST_BACKEND_API = process.env.REACT_APP_PLAYLIST_BACKEND_API || 'http://localhost:5000';
