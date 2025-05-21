@@ -69,3 +69,13 @@ Thumbs.db
 ehthumbs.db
 
 localsettings.py
+
+# Ignore the frontend build directory
+playlist-frontend/node_modules/
+playlist-frontend/build/
+
+*.log
+docker-compose.override.yml
+.vscode/
+*.swp
+
