@@ -14,15 +14,7 @@ const PlaylistTable = () => {
         console.log("Data:", data);
         setSongs(data);
 
-        // Dynamically generate columns based on the keys of the first object
-        // if (data.length > 0) {
-        //   const dynamicColumns = Object.keys(data[0]).map((key) => ({
-        //     title: key.toUpperCase(), // Title will be the uppercase version of the key
-        //     field: key, // Field will match the key name in the object
-        //   }));
-        //   console.log(dynamicColumns);
-        //   setColumns(dynamicColumns);
-        // }
+    
       } catch (err) {
         setError(err.message);
       }
